@@ -16,3 +16,8 @@ remote_dependency: app-marketing-facebook-ads {
   url: "git://github.com/looker/app-marketing-facebook-ads"
   ref: "549c874bdf29d851e72ab3503ae1bab9a8eede5a"
 }
+
+# TODO: Update connection
+constant: CONNECTION_NAME {
+  value: "looker_app"
+}

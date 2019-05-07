@@ -1,4 +1,4 @@
-# Facebook Ads configuration for Marketing Analytics by Looker
+# Facebook Ads configuration for Facebook Ads Block by Looker
 
 include: "/app-marketing-facebook-ads-adapter/*.view"
 include: "/app-marketing-facebook-ads/*.view"
