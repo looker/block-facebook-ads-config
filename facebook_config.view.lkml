@@ -2,11 +2,12 @@
 
 include: "/app-marketing-facebook-ads-adapter/*.view"
 include: "/app-marketing-facebook-ads/*.view"
-include: "/app-marketing-facebook-ads/facebook_block_overview.dashboard"
-include: "/app-marketing-facebook-ads/facebook_block_conversions.dashboard"
-include: "/app-marketing-facebook-ads/facebook_block_impressions.dashboard"
-include: "/app-marketing-facebook-ads/facebook_block_spend.dashboard"
-include: "/app-marketing-facebook-ads/facebook_block_clicks.dashboard"
+include: "/app-marketing-facebook-ads/fb_overview.dashboard"
+include: "/app-marketing-facebook-ads/fb_campaign_metrics_conversions.dashboard"
+include: "/app-marketing-facebook-ads/fb_campaign_metrics_impressions.dashboard"
+include: "/app-marketing-facebook-ads/fb_campaign_metrics_spend.dashboard"
+include: "/app-marketing-facebook-ads/fb_campaign_metrics_clicks.dashboard"
+include: "/app-marketing-facebook-ads/facebook_ads_base.dashboard"
 include: "/app-marketing-common/pdt_base.view.lkml"
 
 # TODO: Update Facebook Ads schema
