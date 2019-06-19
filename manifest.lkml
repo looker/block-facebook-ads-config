@@ -7,7 +7,7 @@ local_dependency: {
 
 # TODO: Update connection
 constant: CONNECTION_NAME {
-  value: "looker_app"
+  value: "looker_application"
 }
 
 constant: FACEBOOK_SCHEMA {
