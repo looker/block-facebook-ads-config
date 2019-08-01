@@ -1,100 +1,105 @@
-# Facebook Ads configuration for Facebook Ads Block by Looker
-
-include: "/app-marketing-facebook-ads-adapter/*.view"
-include: "/app-marketing-facebook-ads/*.view"
-include: "/app-marketing-common/pdt_base.view.lkml"
-
 # TODO: Update Facebook Ads schema
 datagroup: facebook_ads_etl_datagroup {
   sql_trigger: SELECT COUNT(*) FROM `@{FACEBOOK_SCHEMA}.ads_insights` ;;
   max_cache_age: "24 hours"
 }
 
-view: facebook_ads_config {
+# Customize measure definitions in this view. Changes will be reflected across all projects.
+view: ad_metrics_base_config {
+  extends: [ad_metrics_base_template]
   extension: required
-
-  # TODO: Update Facebook Ads schema
-  dimension: facebook_ads_schema {
-    hidden: yes
-    sql: @{FACEBOOK_SCHEMA};;
-  }
 }
 
-view: fb_adcreative {
+view: fb_adcreative_config {
   extends: [adcreative_fb_adapter]
+  extension: required
   # Customize: Add adcreative fields
 }
 
-view: fb_ad {
+view: fb_ad_config {
   extends: [ad_fb_adapter]
+  extension: required
   # Customize: Add ad fields
 }
 
-view: fb_adset {
+view: fb_adset_config {
   extends: [adset_fb_adapter]
+  extension: required
   # Customize: Add ad group fields
 }
 
-view: fb_campaign {
+view: fb_campaign_config {
   extends: [campaign_fb_adapter]
+  extension: required
   # Customize: Add campaign fields
 }
 
-view: fb_account {
+view: fb_account_config {
   extends: [account_fb_adapter]
+  extension: required
   # Customize: Add customer fields
 }
 
-view: fb_ad_metrics_base {
+view: fb_ad_metrics_base_config {
   extends: [fb_ad_metrics_base_template]
+  extension: required
   # Customize: Add metrics or customize drills / labels / descriptions
 }
 
 # Ad Creative Aggregation
-explore: fb_ad_impressions {
+explore: fb_ad_impressions_config {
   hidden: yes
+  extension: required
   extends: [fb_ad_impressions_template]
 }
 
-view: fb_ad_impressions {
+view: fb_ad_impressions_config {
+  extension: required
   extends: [fb_ad_impressions_template]
 }
 
-# Hourly Age and Gender Aggregation
-explore: fb_ad_impressions_age_and_gender {
+explore: fb_ad_impressions_age_and_gender_config {
   hidden: yes
   extends: [fb_ad_impressions_age_and_gender_template]
+  extension: required
 }
 
-view: fb_ad_impressions_age_and_gender {
+view: fb_ad_impressions_age_and_gender_config {
+  extension: required
   extends: [fb_ad_impressions_age_and_gender_template]
 }
 
 # Hourly Geo Aggregation
-explore: fb_ad_impressions_geo {
+explore: fb_ad_impressions_geo_config {
   hidden: yes
   extends: [fb_ad_impressions_geo_template]
+  extension: required
 }
 
-view: fb_ad_impressions_geo {
+view: fb_ad_impressions_geo_config {
   extends: [fb_ad_impressions_geo_template]
+  extension: required
 }
 
 # Hourly Platform and Device Aggregation
-explore: fb_ad_impressions_platform_and_device {
+explore: fb_ad_impressions_platform_and_device_config {
   hidden: yes
   extends: [fb_ad_impressions_platform_and_device_template]
+  extension: required
 }
 
-view: fb_ad_impressions_platform_and_device {
+view: fb_ad_impressions_platform_and_device_config {
   extends: [fb_ad_impressions_platform_and_device_template]
+  extension: required
 }
 
-explore: fb_period_comparison {
+explore: fb_period_comparison_config {
   extends: [fb_period_fact]
   hidden: yes
+  extension: required
 }
 
-view: fb_period_comparison {
+view: fb_period_comparison_config {
   extends: [fb_period_fact]
+  extension: required
 }
