@@ -4,6 +4,16 @@ datagroup: facebook_ads_etl_datagroup {
   max_cache_age: "24 hours"
 }
 
+view: facebook_ads_config {
+  extension: required
+
+  # TODO: Update Facebook Ads schema
+  dimension: facebook_ads_schema {
+    hidden: yes
+    sql: @{FACEBOOK_SCHEMA};;
+  }
+}
+
 # Customize measure definitions in this view. Changes will be reflected across all projects.
 view: ad_metrics_base_config {
   extends: [ad_metrics_base_template]
