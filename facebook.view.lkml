@@ -14,10 +14,25 @@ view: facebook_ads_config {
   }
 }
 
+# To edit the definition of a CONVERSION, follow the instructions in this doc:
+# https://github.com/looker/app-marketing-config-templates/tree/master/facebook_ads_conversion_redefine
+
 # Customize measure definitions in this view. Changes will be reflected across all projects.
 view: ad_metrics_base_config {
   extends: [ad_metrics_base_template]
   extension: required
+
+# For example, to customize measure definitions, use this template:
+#   measure: total_cost {
+#     type:  sum
+#     sql: ${cost} ;;
+#     filters: {
+#       field: campaign.name
+#       value: "EU - Video - Brand"
+#     }
+#   }
+
+# The complete list of measures can be found in ad_metrics_base_template file in the app-marketing-common project.
 }
 
 view: fb_adcreative_config {
@@ -30,6 +45,15 @@ view: fb_ad_config {
   extends: [ad_fb_adapter]
   extension: required
   # Customize: Add ad fields
+
+# To edit dimensions from Ad Table, copy their definition from app-marketing-facebook-ads adapter project, Ad View, and edit in this file.
+# For example, to unhide Bid Type dimension:
+
+#   dimension: bid_type {
+#     hidden: no
+#     type: string
+#     sql: ${TABLE}.bid_type ;;
+#   }
 }
 
 view: fb_adset_config {
