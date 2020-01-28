@@ -1,4 +1,4 @@
-# TODO: Update Facebook Ads schema
+
 datagroup: facebook_ads_etl_datagroup {
   sql_trigger: SELECT COUNT(*) FROM `@{FACEBOOK_SCHEMA}.ads_insights` ;;
   max_cache_age: "24 hours"
@@ -7,7 +7,7 @@ datagroup: facebook_ads_etl_datagroup {
 view: facebook_ads_config {
   extension: required
 
-  # TODO: Update Facebook Ads schema
+# Should remain hidden as it's not intended to be used as a column.
   dimension: facebook_ads_schema {
     hidden: yes
     sql: @{FACEBOOK_SCHEMA};;
