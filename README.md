@@ -1,8 +1,9 @@
 # Facebook Ads Block Configuration Project
 
 This project consists of configuration files for the Facebook Ads block project `block-facebook-ads`
+If installed through the marketplace, input the schema and connection values in the install workflow, otherwise edit them in the `manifest.lkml` file.
 
-## To use this block, you will need to:
+## To install this block manually, you will need to:
 
 1. Update the constants in the `manifest.lkml` to point to your specific facebook ads schema and connection name.
 
