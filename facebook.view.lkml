@@ -82,7 +82,8 @@ view: fb_ad_metrics_base_config {
 
 # Ad Creative Aggregation
 explore: fb_ad_impressions_config {
-  hidden: yes
+  hidden: no
+  group_label: "Block Facebook Ads"
   extension: required
   extends: [fb_ad_impressions_template]
 }
@@ -117,7 +118,8 @@ view: fb_ad_impressions_geo_config {
 
 # Hourly Platform and Device Aggregation
 explore: fb_ad_impressions_platform_and_device_config {
-  hidden: yes
+  hidden: no
+  group_label: "Block Facebook Ads"
   extends: [fb_ad_impressions_platform_and_device_template]
   extension: required
 }
@@ -129,7 +131,8 @@ view: fb_ad_impressions_platform_and_device_config {
 
 explore: fb_period_comparison_config {
   extends: [fb_period_fact]
-  hidden: yes
+  hidden: no
+  group_label: "Block Facebook Ads"
   extension: required
 }
 
