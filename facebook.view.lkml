@@ -14,8 +14,6 @@ view: facebook_ads_config {
   }
 }
 
-# To edit the definition of a CONVERSION, follow the instructions in this doc:
-# https://github.com/looker/app-marketing-config-templates/tree/master/facebook_ads_conversion_redefine
 
 # Customize measure definitions in this view. Changes will be reflected across all projects.
 view: ad_metrics_base_config {
@@ -199,8 +197,6 @@ view: actions_fb_custom_config {
   #   sql: if(${action_type} = "test", ${value}, null) ;;
   # }
 
-  # dimension: conversions {
-  #   sql: if(${actions.action_type} = 'test', ${actions.value}, null) ;;
 }
 
 view: actions_age_and_gender_fb_custom_config {
