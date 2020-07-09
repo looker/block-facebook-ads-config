@@ -161,9 +161,7 @@ explore: fb_ad_impressions_platform_and_device_config {
   #   type: left_outer
   #   sql_on: ${fact.ad_id} = ${actions.ad_id} AND
   #     ${fact._date} = ${actions._date} AND
-  #     ${fact.impression_device} = ${actions.impression_device} AND
-  #     ${fact.platform_position} = ${actions.platform_position} AND
-  #     ${fact.publisher_platform} = ${actions.publisher_platform} AND
+  #     ${fact.breakdown} = ${actions.breakdown} AND
   #     ${actions.action_type}  = 'test' ;;
   #   relationship: one_to_many
   # }
@@ -224,7 +222,7 @@ view: actions_hour_fb_custom_config {
 }
 
 view: actions_platform_and_device_fb_custom_config {
-  extends: [actions_age_and_gender_fb_template]
+  extends: [actions_platform_and_device_fb_template]
   extension: required
 # To edit the definition of Conversions, edit this dimension to include the action type used by your business.
 
